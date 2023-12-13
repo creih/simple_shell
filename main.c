@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
 		{
 			while (*ptr_env != NULL)
 			{
-				write(STDOUT_FILENO, *ptr_env, strlen(*ptr_env));
+				write(STDOUT_FILENO, *ptr_env, sizeof(*ptr_env));
 				write(STDOUT_FILENO, "\n", 1);
 				ptr_env++;
 			}

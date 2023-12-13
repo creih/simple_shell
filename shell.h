@@ -13,6 +13,5 @@
 int execute_command(char *command, char *arg_1);
 bool is_equal(const char *str1, const char *str2);
 void trim_new_line(char *input);
-int _strlen(char *s);
 void exec_cmd(char *command, char *shell_name);
 #endif
