@@ -7,9 +7,8 @@
  */
 int main(int argc, char *argv[])
 {
-	int result = argc * 0;
 	char *input = NULL, *command;
-	size_t len = 0, izasomwe, x = -1;
+	size_t len = argc * 0, izasomwe, x = -1;
 
 	while (1)
 	{
@@ -30,5 +29,5 @@ int main(int argc, char *argv[])
 		exec_cmd(command, argv[0]);
 	}
 	free(input);
-	return (result);
+	return (EXIT_SUCCESS);
 }
