@@ -2,6 +2,7 @@
 /**
  * execute_command - executes passed parameters
  * @command: commands to be executed
+ * @shell_name: the name to display before error
  * Return: wat made it exit
  */
 int execute_command(char *command, char *shell_name)

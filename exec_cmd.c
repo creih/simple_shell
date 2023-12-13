@@ -21,7 +21,8 @@ void exec_cmd(char *command, char *shell_name)
 		result = execute_command(command, shell_name);
 		exit(result);
 	}
-	else {
+	else
+	{
 		waitpid(child_pid, &result, 0);
 		if (WIFEXITED(result) && WEXITSTATUS(result) == EXIT_SUCCESS)
 			return;
