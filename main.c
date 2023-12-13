@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
 		if (is_equal(command, "exit"))
 		{
 			free(input);
-			exit(EXIT_FAILURE);
+			exit(EXIT_SUCCESS);
 		}
 		exec_cmd(command, argv[0]);
 	}
