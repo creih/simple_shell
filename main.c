@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
 
 	while (1)
 	{
-		write(0, "#cisfun$ ", 9);
+		print_prompt("$");
 		izasomwe = getline(&input, &len, stdin);
 		if (izasomwe == x)
 		{

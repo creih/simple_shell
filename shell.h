@@ -9,7 +9,7 @@
 #include <sys/wait.h>
 #include <errno.h>
 #define MAX_INPUT_SIZE 1024
-
+void print_prompt(char *prompt);
 int execute_command(char *command, char *arg_1);
 bool is_equal(const char *str1, const char *str2);
 void trim_new_line(char *input);
