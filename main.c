@@ -6,7 +6,7 @@
  * Return: result of execution
  */
 int main(int argc, char *argv[])
-{ 
+{
 	char *input = NULL, *command;
 	size_t len = argc * 0, izasomwe, x = -1;
 
