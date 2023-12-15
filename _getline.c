@@ -9,7 +9,7 @@
  */
 ssize_t _getline(char **lineptr, size_t *n, FILE *stream)
 {
-	int j = 0;/*keeps track of the current character in the buffer*/
+	size_t j = 0;/*keeps track of the current character in the buffer*/
 	ssize_t bytes_read;
 
 	/*checkin if there is no memory that has been allocated*/
@@ -28,12 +28,12 @@ ssize_t _getline(char **lineptr, size_t *n, FILE *stream)
 		return (-1);
 	}
 	/*processing the characters read*/
-	while (bytes_read != 0 && (*lineptr)[j] != '\n')
+	while (bytes_read != 0 && (*lineptr)[j - 1] != '\n')
 	{
-		if (j >= *n - 1) /*checking if the size of the buffer is large enoughgh*/
+		if (j >= *n) /*checking if the size of the buffer is large enoughgh*/
 		{
 			*n *= 2;/*doubling the size of the buffer*/
-			*lineptr = realloc(*lineptr, n);
+			*lineptr = realloc(*lineptr, *n);
 			if (!(*lineptr))
 			{
 				return (-1);
