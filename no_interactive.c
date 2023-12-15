@@ -20,6 +20,10 @@ void n_interactive(int bara, char *zarg[])
 			free(ibyinjira);
 			return;
 		}
+		if (is_equal(command, "env"))
+		{
+			exec_env();
+		}
 		exec_cmd(command, zarg[0]);
 	}
 	free(ibyinjira);
