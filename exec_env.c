@@ -9,10 +9,10 @@ void exec_env(void)
 	char *equal;
 	size_t size;
 
-	while(*env != NULL)
+	while (*env != NULL)
 	{
 		equal = strchr(*env, '=');
-		if(equal != NULL)
+		if (equal != NULL)
 		{
 			size = _strlen(*env);
 			write(STDOUT_FILENO, *env, size);
