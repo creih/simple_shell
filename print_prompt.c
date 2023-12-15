@@ -7,5 +7,5 @@
  */
 void print_prompt(void)
 {
-	write(STDOUT_FILENO, "#cisfun$ ", sizeof("#cisfun$ "));
+	write(STDOUT_FILENO, "#cisfun$ ", sizeof("#cisfun$"));
 }
