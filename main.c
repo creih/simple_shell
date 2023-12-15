@@ -8,15 +8,17 @@
 int main(int argc, char *argv[])
 {
 	char *input = NULL, *command;
-	size_t len = argc * 0, izasomwe, x = -1;
+	size_t len =  0 * argc;
+	ssize_t izasomwe;
+
 
 	while (1)
 	{
-		print_prompt("$");
+		write(1, "#cisfun$ ", 9);
 		izasomwe = getline(&input, &len, stdin);
-		if (izasomwe == x)
+		if (izasomwe == -1)
 		{
-			write(STDOUT_FILENO, "\n", 1);
+			write(2, "\n", 1);
 			break;
 		}
 		trim_new_line(input);
@@ -27,7 +29,7 @@ int main(int argc, char *argv[])
 			exit(EXIT_SUCCESS);
 		}
 		exec_cmd(command, argv[0]);
+		free(input);/*freeing up the memory allocated by getline*/
 	}
-	free(input);
 	return (EXIT_SUCCESS);
 }

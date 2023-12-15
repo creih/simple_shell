@@ -6,7 +6,7 @@
  */
 void trim_new_line(char *input)
 {
-	int len = sizeof(input);
+	size_t len = _strlen(input);
 
 	if (input[len - 1] == '\n')
 	{

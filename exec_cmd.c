@@ -18,12 +18,16 @@ void exec_cmd(char *command, char *shell_name)
 	}
 	if (child_pid == 0)
 	{
-		result = execute_command(command, shell_name);
-		exit(result);
+		execute_command(command, shell_name);
+		/*exit(result);*/
 	}
 	else
 	{
-		waitpid(child_pid, &result, 0);
+		if (waitpid(child_pid, &result, 0) == -1)
+		{
+			perror("waitpid");
+			exit(EXIT_FAILURE);
+		}
 		if (WIFEXITED(result) && WEXITSTATUS(result) == EXIT_SUCCESS)
 			exit(EXIT_SUCCESS);
 	}
