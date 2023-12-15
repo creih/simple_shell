@@ -29,6 +29,6 @@ void exec_cmd(char *command, char *shell_name)
 			exit(EXIT_FAILURE);
 		}
 		if (WIFEXITED(result) && WEXITSTATUS(result) == EXIT_SUCCESS)
-			exit(EXIT_SUCCESS);
+			return;
 	}
 }
