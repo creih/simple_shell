@@ -15,5 +15,7 @@ int execute_command(char *command, char *arg_1);
 bool is_equal(const char *str1, const char *str2);
 void trim_new_line(char *input);
 void exec_cmd(char *command, char *shell_name);
+int n_interactive(int bara, char *zarg[]);
+int ese_ni_interactive(int bara, char *zarg[]);
 
 #endif
