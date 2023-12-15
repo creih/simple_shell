@@ -5,10 +5,11 @@
  * @zarg: this will hold argv part of main
  * Return: idk yet
  */
-int ese_ni_interactive(int bara, char *zarg[])
+void ese_ni_interactive(int bara, char *zarg[])
 {
 	char *ibyinjira = NULL, *command;
-	size_t len = bara * 0, izasomwe, x = -1;
+	size_t len = bara * 0;
+	ssize_t izasomwe, x = -1;
 
 	while (1)
 	{
@@ -17,18 +18,18 @@ int ese_ni_interactive(int bara, char *zarg[])
 		if (izasomwe == x)
 		{
 			write(STDOUT_FILENO, "\n", 1);
-			break;
+			free(ibyinjira);
+			return;
 		}
 		trim_new_line(ibyinjira);
 		command = strtok(ibyinjira, "\n");
 		if (is_equal(command, "exit"))
 		{
 			free(ibyinjira);
-			exit(EXIT_SUCCESS);
+			return;
 		}
 		exec_cmd(command, zarg[0]);
 		continue;
 	}
 	free(ibyinjira);
-	return (EXIT_SUCCESS);
 }
