@@ -14,7 +14,7 @@ int execute_command(char *command, char *shell_name)
 	if (execve(args[0], args, NULL) == -1)
 	{
 		perror(shell_name);
-		return (EXIT_FAILURE);
+		return(EXIT_FAILURE);
 	}
-	return (EXIT_SUCCESS);
+	return(EXIT_SUCCESS);
 }

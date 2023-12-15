@@ -2,11 +2,10 @@
 
 /**
  *print_prompt - prints prompt to the stdout.
- *@prompt: pointer to a char.
  *
  * Return: void.
  */
-void print_prompt(char *prompt)
+void print_prompt(void)
 {
-	printf("%s", prompt);
+	write(STDOUT_FILENO, "#cisfun$ ", sizeof("#cisfun$ "));
 }
