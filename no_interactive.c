@@ -11,18 +11,15 @@ int n_interactive(int bara, char *zarg[])
 	char *ibyinjira = NULL, *command;
 	size_t len = bara * 0, izasomwe, x = -1;
 
-	if (!isatty(STDIN_FILENO))
+	while ((izasomwe = getline(&ibyinjira, &len, stdin)) != x)
 	{
-		while ((izasomwe = getline(&ibyinjira, &len, stdin)) != x)
+		trim_new_line(ibyinjira);
+		command = strtok(ibyinjira, "\n");
+		if (is_equal(command, "exit"))
 		{
-			trim_new_line(ibyinjira);
-			command = strtok(ibyinjira, "\n");
-			if (is_equal(command, "exit"))
-			{
-				break;
-			}
-			exec_cmd(command, zarg[0]);
+			break;
 		}
+		exec_cmd(command, zarg[0]);
 	}
 	free(ibyinjira);
 	return (gusohoka);
