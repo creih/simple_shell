@@ -10,19 +10,13 @@
 #include <errno.h>
 #define MAX_INPUT_SIZE 1024
 
-<<<<<<< HEAD
-=======
 void print_prompt(void);
->>>>>>> 79808e65a003e55f164419835efe6481ed141a76
 int execute_command(char *command, char *arg_1);
 bool is_equal(const char *str1, const char *str2);
 void trim_new_line(char *input);
 void exec_cmd(char *command, char *shell_name);
-<<<<<<< HEAD
 int _strlen(char *s);
-=======
 int n_interactive(int bara, char *zarg[]);
 int ese_ni_interactive(int bara, char *zarg[]);
 
->>>>>>> 79808e65a003e55f164419835efe6481ed141a76
 #endif
