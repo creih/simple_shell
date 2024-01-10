@@ -24,7 +24,9 @@ int main(void)
 		}
 		else if(pid == 0)
 		{
-			char *args[] = {input, NULL};
+			char *args[2];
+			args[0] = input;
+			args[1] = NULL;
 			if (execve(input, args, NULL) == -1)
 			{
 				perror("Execution failed");
