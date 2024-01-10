@@ -32,6 +32,7 @@ int main(void)
 				perror("Execution failed");
 				exit(EXIT_FAILURE);
 			}
+			_exit(EXIT_SUCCESS);
 		}
 		else
 		{
