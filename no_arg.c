@@ -7,7 +7,7 @@
  */
 int main(void)
 {
-	char *input, **args;
+	char *input;
 	size_t len = 0;
 	pid_t pid;
 
@@ -24,7 +24,7 @@ int main(void)
 		}
 		else if(pid == 0)
 		{
-			*args[] = {input, NULL};
+			char *args[] = {input, NULL};
 			if (execve(input, args, NULL) == -1)
 			{
 				perror("Execution failed");
