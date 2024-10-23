@@ -1,4 +1,4 @@
-#SIMPLE SHELL Project
+# SIMPLE SHELL Project
 
 ## Introduction
 Welcome to the collaborative project of coding a simple UNIX command interpreter. This project is a joint effort by NIYONSHUTI Emmanuel and eRic Ishim.
